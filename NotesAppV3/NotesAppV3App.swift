@@ -12,7 +12,8 @@ import SwiftData
 struct NotesAppV3App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Note.self,
+            Tag.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -23,9 +24,10 @@ struct NotesAppV3App: App {
         }
     }()
 
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            NotesView(notes: <#Binding<[Note]>#>, tags: <#Binding<[Tag]>#>)
         }
         .modelContainer(sharedModelContainer)
     }
